@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false,
+  // Link to get the articles
+  articlesUrl: 'http://newsapi.org/v2/everything?q=Apple&from=2020-10-17&sortBy=popularity&apiKey=dfb051d3aafa454c9161803e895013a8',
+  articleUrl: 'http://newsapi.org/v2/everything?q=Apple&from=2020-10-17&sortBy=popularity&apiKey=dfb051d3aafa454c9161803e895013a8',
 
   // Firebase Config
   firebaseConfig:  {

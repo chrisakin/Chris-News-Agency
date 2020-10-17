@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../article.service';
+
 
 @Component({
   selector: 'app-body',
@@ -6,10 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent implements OnInit {
+  articles: any;
+  loading = false;
+  success = '';
+  error = '';
+  constructor(private articleService: ArticleService ) { }
 
-  constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+
+this.articleService.getArticles()
+.subscribe(
+  res => {
+    
+    this.articles = res;
+  },
+  err => {
+    console.log("Error occured");
   }
+);
+}
+
 
 }

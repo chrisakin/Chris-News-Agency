@@ -1,1 +1,45 @@
-<p>body works!</p>
+
+
+<main id="main">
+<section id="blog" class="blog">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-4  col-md-6 d-flex align-items-stretch" *ngFor="let article of articles; index as i">
+          <article class="entry">
+
+            <div class="entry-img card-blog-img">
+              <img src="{{article.urlToImage}}" alt="Card image cap" class="img-fluid">
+            
+                <span class="card-blog-meta bg-color-yellowish">{{article.name}}</span>
+            
+            </div>
+
+            <h2 class="entry-title">
+              {{article.title}}
+            </h2>
+
+            <div class="entry-meta">
+              <ul>
+                <li class="d-flex align-items-center"><i class="icofont-user"></i>{{article.author}} </li>
+                <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <time>{{article.publishedAt}}</time></li>
+              </ul>
+            </div>
+
+            <div class="entry-content">
+              
+              <div class="read-more">
+                {{article.content}}
+              </div>
+            </div>
+            
+
+          </article><!-- End blog entry -->
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Blog Section -->
+
+</main><!-- End #main -->
