@@ -1,18 +1,45 @@
+// Angular Dependencies
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// Service
+import { AuthenticationService } from './authentication.service';
+
+// Import Firebase Dependencies
+import { AngularFireModule } from "@angular/fire";
+import { environment } from '../environments/environment';
+import { AngularFireAuthModule, AngularFireAuth } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule} from '@angular/fire/storage'
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+
+// Components Imports
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SignupComponent,
+    LoginComponent,
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

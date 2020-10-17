@@ -1,0 +1,17 @@
+.deep{
+    margin-top: 50px !important;
+}
+
+.boy{
+    margin-top: 150px !important;
+}
+
+@media screen and (max-width: 768px) {
+    .deep {
+      margin-top: 20px !important;
+     } 
+
+    .boy{
+        margin-top: 100px !important;
+    }
+    }
